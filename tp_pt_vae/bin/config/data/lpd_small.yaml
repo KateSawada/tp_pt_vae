@@ -1,0 +1,37 @@
+# Dataset settings
+train_pianoroll: egs/lpd_small/data/lpd_train.txt # List file of training audio files.
+valid_pianoroll: egs/lpd_small/data/lpd_valid.txt  # List file of validation audio files.
+eval_pianoroll: egs/lpd_small/data/lpd_eval.txt    # List file of evaluation feature files for decoding.
+allow_cache: false  # Whether to allow cache in dataset. If true, it requires cpu memory
+
+n_tracks: 5
+measure_resolution: 16
+beat_resolution: 4
+n_pitches: 72
+n_measures: 4
+lowest_pitch: 24
+
+# Data loader setting
+batch_size: 16     # Batch size
+num_workers: 1     # Number of workers in Pytorch DataLoader
+pin_memory: true   # Whether to pin memory in Pytorch DataLoader
+
+is_drums:
+- true
+- false
+- false
+- false
+- false
+programs:
+- 0
+- 0
+- 25
+- 33
+- 48
+tempo: 100
+track_names:
+- Drums
+- Piano
+- Guitar
+- Bass
+- Strings

@@ -26,4 +26,14 @@ class PianorollDistanceLoss(nn.Module):
             self.distance_function = partial(F.binary_cross_entropy, reduction="sum")
 
     def forward(self, x1, x2):
-        return self.distance_function(x1, x2)
+        """reconstruction loss averaged over batch
+
+        Args:
+            x1 (Tensor): predicted tensor
+            x2 (Tensor): actual tensor
+
+        Returns:
+            Tensor: loss
+        """
+        batch_size = x1.shape[0]
+        return self.distance_function(x1, x2) / batch_size

@@ -64,7 +64,7 @@ def main(config: DictConfig) -> None:
     # model.remove_weight_norm()
     model.eval().to(device)
 
-    sample_count = 64
+    sample_count = config.sample_count
 
     # check directory existence
     out_types = ["npy", "mid", "pianoroll"]

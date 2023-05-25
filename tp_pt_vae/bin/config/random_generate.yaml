@@ -21,3 +21,4 @@ checkpoint_steps: 400000  # Path to the checkpoint of pre-trained model.
 seed: 100                 # Seed number for random numbers.
 save_source: false        # Whether to save source excitation signals.
 sf2_path: ./font.sf2  # $ sudo apt install fluidsynth && cp /usr/share/sounds/sf2/FluidR3_GM.sf2 ./font.sf2
+sample_count: 4
